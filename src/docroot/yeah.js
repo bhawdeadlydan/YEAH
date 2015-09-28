@@ -16,6 +16,7 @@
 
         var that=this;
 
+        //create a element's list - state of app
         this.getElementsPosition=function()
         {
             var _arr=[];
@@ -39,17 +40,21 @@
 
         this.animatedElements=this.getElementsPosition();
 
+        //everytime i scroll
         $( window ).scroll(function(e)
         {
             var _sp = parseInt($(window).scrollTop());
 
+            //map object
             var objs=$.fn.yeah.objsWebViewLocation(that.animatedElements,_sp);
 
+            //obj current into view
             $(objs.objIntoWebView).each(function(i,el){
                 $(el).removeClass($(el).data("yeah-animation-out"));
                 $(el).addClass($(el).data("yeah-animation-in"));
             });
 
+            // obj current out from view
             $(objs.objOutWebView).each(function(i,el){
                 $(el).removeClass($(el).data("yeah-animation-in"));
                 $(el).addClass($(el).data("yeah-animation-out"));
@@ -57,9 +62,7 @@
 
         });
 
-
         return this;
-
 
     };
 
