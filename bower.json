@@ -1,0 +1,32 @@
+{
+  "name": "YEAH",
+  "version": "1.0.0",
+  "homepage": "www.alessiodicrescenzo.com",
+  "authors": [
+    "Alessio <me@alessiodicrescenzo.com>"
+  ],
+  "description": "Use animate.css on scrolling with ability to reverse animations on scrollUp. Original idea from WOW.js created by Matthieu Aussaguel.",
+  "main": "yeah.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "Yeah",
+    "animation",
+    "scroll",
+    "reverse"
+  ],
+  "license": "GNU",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4"
+  }
+}
