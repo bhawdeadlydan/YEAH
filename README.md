@@ -1,5 +1,3 @@
-![Alt text](https://raw.githubusercontent.com/kenta88/Everest/master/src/docroot/everest-logo.png?raw=true "Optional Title")
-
 YEAH JS
 =====
 
