@@ -14,6 +14,10 @@
 
     $.fn.yeah = function( params ) {
 
+
+        params.responsiveAvailableWidth = (params.responsiveAvailableWidth) ? params.responsiveAvailableWidth : null;
+
+        console.log(params.responsiveAvailableWidth);
         var that=this;
 
         //create a element's list - state of app
@@ -33,7 +37,6 @@
 
                 _arr.push(obj);
 
-                console.log(obj.top,obj.bottom);
 
             });
 
@@ -77,6 +80,11 @@
         }
 
 
+        this.checkAvailableWidth=function()
+        {
+
+        }
+
         this.animatedElements=this.getElementsPosition();
 
         //first appear animation
@@ -86,7 +94,6 @@
         $( window ).scroll(function(e)
         {
             var _sp = parseInt($(window).scrollTop());
-            //map object
             that.classAddRemove(that.animatedElements,_sp);
 
         });
