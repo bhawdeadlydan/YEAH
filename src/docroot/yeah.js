@@ -33,6 +33,8 @@
 
                 _arr.push(obj);
 
+                console.log(obj.top,obj.bottom);
+
             });
 
             return _arr;
