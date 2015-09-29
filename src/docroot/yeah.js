@@ -23,6 +23,8 @@
             that.each(function(i,el){
                 var offset=$(el).offset().top, inOffset=$(el).data("yeah-animation-in-offset"), outOffset=$(el).data("yeah-animation-out-offset");
 
+
+
                 var obj={
                     'element':$(el),
                     'bottom':parseInt(offset - window.innerHeight + $(el).outerHeight()),
@@ -39,6 +41,22 @@
         }
 
         this.animatedElements=this.getElementsPosition();
+
+        //bind first animation
+        var objs=$.fn.yeah.objsWebViewLocation(that.animatedElements,0);
+
+        //obj current into view
+        $(objs.objIntoWebView).each(function(i,el){
+            $(el).removeClass($(el).data("yeah-animation-out"));
+            $(el).addClass($(el).data("yeah-animation-in"));
+        });
+
+        // obj current out from view
+        $(objs.objOutWebView).each(function(i,el){
+            $(el).removeClass($(el).data("yeah-animation-in"));
+            $(el).addClass($(el).data("yeah-animation-out"));
+        });
+
 
         //everytime i scroll
         $( window ).scroll(function(e)
