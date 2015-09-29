@@ -17,7 +17,9 @@
 
         params.responsiveAvailableWidth = (params.responsiveAvailableWidth) ? params.responsiveAvailableWidth : null;
 
-        console.log(params.responsiveAvailableWidth);
+
+
+
         var that=this;
 
         //create a element's list - state of app
@@ -45,18 +47,33 @@
 
         this.classAddRemove=function(_ae,_sp)
         {
-            var objs=this.objsWebViewLocation(_ae,_sp);
-            //obj current into view
-            $(objs.objIntoWebView).each(function(i,el){
-                $(el).removeClass($(el).data("yeah-animation-out"));
-                $(el).addClass($(el).data("yeah-animation-in"));
-            });
+            if(that.checkAvailableWidth()) {
+                var objs = this.objsWebViewLocation(_ae, _sp);
+                //obj current into view
+                $(objs.objIntoWebView).each(function (i, el) {
+                    $(el).removeClass($(el).data("yeah-animation-out"));
+                    $(el).addClass($(el).data("yeah-animation-in"));
+                });
 
-            // obj current out from view
-            $(objs.objOutWebView).each(function(i,el){
-                $(el).removeClass($(el).data("yeah-animation-in"));
-                $(el).addClass($(el).data("yeah-animation-out"));
-            });
+                // obj current out from view
+                $(objs.objOutWebView).each(function (i, el) {
+                    $(el).removeClass($(el).data("yeah-animation-in"));
+                    $(el).addClass($(el).data("yeah-animation-out"));
+                });
+            }
+        }
+
+        this.resetPlugin=function()
+        {
+            if(!that.checkAvailableWidth())
+            {
+                $(this.animatedElements).each(function (i, el) {
+
+                    $(el.element).removeClass($(el.element).data("yeah-animation-in"));
+                    $(el.element).removeClass($(el.element).data("yeah-animation-out"));
+                });
+            }
+
         }
 
         this.objsWebViewLocation=function(objList,_scrollPosition)
@@ -83,6 +100,26 @@
         this.checkAvailableWidth=function()
         {
 
+            if(params.responsiveAvailableWidth)
+            {
+                var i=0, l=params.responsiveAvailableWidth.length, flag=false;
+                var _cw=window.innerWidth;
+
+                for(i=0;i<l && !flag;i++)
+                {
+                    if(_cw >= params.responsiveAvailableWidth[i].min && _cw <= params.responsiveAvailableWidth[i].max)
+                    {
+                        flag=true;
+                    }
+                }
+                return flag;
+            }
+            else
+            {
+                return true;
+            }
+
+
         }
 
         this.animatedElements=this.getElementsPosition();
@@ -91,10 +128,17 @@
         this.classAddRemove(this.animatedElements,$(window).scrollTop());
 
 
+        $(window).resize(function() {
+            that.resetPlugin();
+        });
+
+
         $( window ).scroll(function(e)
         {
-            var _sp = parseInt($(window).scrollTop());
-            that.classAddRemove(that.animatedElements,_sp);
+
+                var _sp = parseInt($(window).scrollTop());
+                that.classAddRemove(that.animatedElements,_sp);
+
 
         });
 
