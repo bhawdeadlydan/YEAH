@@ -23,12 +23,10 @@
             that.each(function(i,el){
                 var offset=$(el).offset().top, inOffset=$(el).data("yeah-animation-in-offset"), outOffset=$(el).data("yeah-animation-out-offset");
 
-
-
                 var obj={
                     'element':$(el),
-                    'bottom':parseInt(offset - window.innerHeight + $(el).outerHeight()),
                     'top':parseInt(offset),
+                    'bottom':parseInt(offset - window.innerHeight + $(el).outerHeight()),
                     'inOffset':inOffset ? parseInt(inOffset) : 0,
                     'outOffset':outOffset ? parseInt(outOffset) : 0
                 };
@@ -40,32 +38,9 @@
             return _arr;
         }
 
-        this.animatedElements=this.getElementsPosition();
-
-        //bind first animation
-        var objs=$.fn.yeah.objsWebViewLocation(that.animatedElements,0);
-
-        //obj current into view
-        $(objs.objIntoWebView).each(function(i,el){
-            $(el).removeClass($(el).data("yeah-animation-out"));
-            $(el).addClass($(el).data("yeah-animation-in"));
-        });
-
-        // obj current out from view
-        $(objs.objOutWebView).each(function(i,el){
-            $(el).removeClass($(el).data("yeah-animation-in"));
-            $(el).addClass($(el).data("yeah-animation-out"));
-        });
-
-
-        //everytime i scroll
-        $( window ).scroll(function(e)
+        this.classAddRemove=function(_ae,_sp)
         {
-            var _sp = parseInt($(window).scrollTop());
-
-            //map object
-            var objs=$.fn.yeah.objsWebViewLocation(that.animatedElements,_sp);
-
+            var objs=this.objsWebViewLocation(_ae,_sp);
             //obj current into view
             $(objs.objIntoWebView).each(function(i,el){
                 $(el).removeClass($(el).data("yeah-animation-out"));
@@ -77,6 +52,40 @@
                 $(el).removeClass($(el).data("yeah-animation-in"));
                 $(el).addClass($(el).data("yeah-animation-out"));
             });
+        }
+
+        this.objsWebViewLocation=function(objList,_scrollPosition)
+        {
+            var _arrInto=[];
+            var _arrOut=[];
+
+            $(objList).each(function(i,el){
+
+                if(el.bottom <=_scrollPosition - el.inOffset  && _scrollPosition + el.outOffset <= el.top)
+                {
+                    _arrInto.push(el.element);
+                }
+                else
+                {
+                    _arrOut.push(el.element);
+                }
+            });
+
+            return {"objIntoWebView":_arrInto,"objOutWebView":_arrOut};
+        }
+
+
+        this.animatedElements=this.getElementsPosition();
+
+        //first appear animation
+        this.classAddRemove(this.animatedElements,$(window).scrollTop());
+
+
+        $( window ).scroll(function(e)
+        {
+            var _sp = parseInt($(window).scrollTop());
+            //map object
+            that.classAddRemove(that.animatedElements,_sp);
 
         });
 
@@ -84,25 +93,6 @@
 
     };
 
-    $.fn.yeah.objsWebViewLocation=function(objList,_scrollPosition)
-    {
-        var _arrInto=[];
-        var _arrOut=[];
-
-        $(objList).each(function(i,el){
-
-            if(el.bottom <=_scrollPosition - el.inOffset  && _scrollPosition + el.outOffset <= el.top)
-            {
-                _arrInto.push(el.element);
-            }
-            else
-            {
-                _arrOut.push(el.element);
-            }
-        });
-
-        return {"objIntoWebView":_arrInto,"objOutWebView":_arrOut};
-    }
 
 
 
