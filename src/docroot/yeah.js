@@ -8,7 +8,8 @@
  * Date: 2015-09-28T16:01Z
  */
 
-var _yeahused="1.0.0";
+
+window._yeahused="1.0.0";
 
 (function( $ ) {
 
