@@ -8,4 +8,4 @@ Use animate.css on scrolling with ability to reverse animations on scrollUp. Ori
 
 HOW TO USE
 --------
- HOW TO USE SOON!!!!
+Take a look to www.alessiodicrescenzo.com/yeahjs
