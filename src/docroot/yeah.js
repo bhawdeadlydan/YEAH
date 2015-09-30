@@ -20,8 +20,6 @@
 
 
 
-
-
         var that=this;
 
         //create a element's list - state of app
@@ -133,10 +131,9 @@
 
 
 
-
+        //start the plugin
         if(!params.mobile)
         {
-            console.log(!this.mobilecheck())
             if(!this.mobilecheck())
             {
                 this.animatedElements=this.getElementsPosition();
