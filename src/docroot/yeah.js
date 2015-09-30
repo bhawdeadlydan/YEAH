@@ -32,7 +32,7 @@
                 var obj={
                     'element':$(el),
                     'top':parseInt(offset),
-                    'bottom':parseInt(offset - window.innerHeight + $(el).outerHeight()),
+                    'bottom':parseInt(offset - window.innerHeight + $(el).innerHeight()),
                     'inOffset':inOffset ? parseInt(inOffset) : 0,
                     'outOffset':outOffset ? parseInt(outOffset) : 0
                 };
