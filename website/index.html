@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>YEAH JS</title>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="YEAH.min.js"></script>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="animate.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <script type="text/javascript" src="sintaxHL/shCore.js"></script>
+    <script type="text/javascript" src="sintaxHL/shBrushJScript.js"></script>
+    <link type="text/css" rel="stylesheet" href="sintaxHL/shCoreRDark.css"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+
+    <style>
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: rgba(80, 80, 80, 1);
+
+        }
+
+        .mt {
+            margin-top: 24px;
+        }
+
+        .mt\+ {
+            margin-top: 36px;
+        }
+
+        .mt\+vp {
+            margin-top: 50vh;
+        }
+
+        a
+        {
+            color:#cd0808;
+        }
+
+        a:hover,a:visited
+        {
+            color:#cd0808;
+        }
+
+        h1, h2, h3, p {
+            font-family: 'Satisfy', cursive;
+            color: white;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        h2.logo {
+            font-size: 320px;
+            margin: 0px auto;
+            line-height: 0px;
+        }
+
+        @media (max-width: 768px) {
+            h2.logo {
+                font-size: 120px;
+                margin: 0px auto;
+                line-height: 0px;
+            }
+        }
+
+        h1.title {
+            font-weight: 800;
+            font-size: 90px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+        }
+
+
+        .container {
+            text-align: center;
+        }
+
+
+
+
+        img {
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row mt+">
+            <div>
+                <h2 class="logo"><i class="fa fa-hand-scissors-o"></i></h2>
+
+                <h1 class="title">
+                    YEAH.js
+                </h1>
+
+                <p class="mt+ animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Scrolling down<br>
+                    <i class="mt fa fa-hand-o-down"></i>
+                </p>
+
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Another scroll animation library that improve the original WOW.js idea, by Matt Aussaguel, with
+                    others useful features.
+                    <br>Scroll down to take a look to examples!
+                </h3>
+
+            </div>
+        </div>
+
+        <div class="row mt+vp">
+            <div>
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    First of all, Wow.js doesn't allow to reverse the animation after his first appearence. Now with
+                    YEAH.js
+                    you can set data attribute to define which animation use. You can use all animation includend into
+                    animate.css by Daniel Eden or
+                    use yours.
+                </h3>
+
+                <p class="mt+ animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Scrolling down<br>
+                    <i class="mt fa fa-hand-o-down"></i>
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt+vp">
+            <div>
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Take a look how cool it appears!
+                </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 mt">
+                <img class="animated" data-yeah-animation-in="bounceInLeft" data-yeah-animation-out="bounceOutLeft"
+                     src="http://placehold.it/650x250?text=bounceInLeft/bounceOutLeft">
+            </div>
+                        <div class="col-lg-4 mt">
+                <img class="animated" data-yeah-animation-in="bounceIn" data-yeah-animation-out="bounceOut"
+                     src="http://placehold.it/650x250?text=bounciIn/BounceOut">
+            </div>
+                        <div class="col-lg-4 mt">
+                <img class="animated" data-yeah-animation-in="bounceInRight" data-yeah-animation-out="bounceOutRight"
+                     src="http://placehold.it/650x250?text=bounceInRight/bounceOutRight">
+            </div>
+
+
+            <div class="col-lg-12 mt">
+                <img class="animated" data-yeah-animation-in="flipInX" data-yeah-animation-out="flipOutX"
+                     src="http://placehold.it/650x250?text=flipInX/flipOutX">
+            </div>
+
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                <img class="animated" data-yeah-animation-in="rotateInDownLeft" data-yeah-animation-out="rotateOutUpLeft"
+                     src="http://placehold.it/650x250?text=rotateInDownLeft/rotateOutUpLeft">
+            </div>
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+            <img class="animated" data-yeah-animation-in="rotateInDownRight" data-yeah-animation-out="rotateOutUpRight"
+                 src="http://placehold.it/650x250?text=rotateInDownRight/rotateOutUpRight">
+            </div>
+
+            <div class="col-lg-4 mt">
+                <img class="animated" data-yeah-animation-in="zoomInLeft" data-yeah-animation-out="zoomOutLeft"
+                     src="http://placehold.it/650x250?text=bounceInLeft/bounceOutLeft">
+            </div>
+                        
+            <div class="col-lg-4 mt">
+                <img class="animated" data-yeah-animation-in="zoomIn" data-yeah-animation-out="zoomOut"
+                     src="http://placehold.it/650x250?text=bounciIn/BounceOut">
+            </div>
+                        
+            <div class="col-lg-4 mt">
+                <img class="animated" data-yeah-animation-in="zoomInRight" data-yeah-animation-out="zoomOutRight"
+                     src="http://placehold.it/650x250?text=bounceInRight/bounceOutRight">
+            </div>
+
+        </div>
+
+
+        <div class="row mt+">
+            <div>
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    It's possible to set only the enter viewport animation !
+                </h3>
+            </div>
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-6 mt">
+                <img class="animated" data-yeah-animation-in="slideInRight" data-yeah-animation-out=""
+                     src="http://placehold.it/650x250?text=offset-in 0 / offset-out 400" data-yeah-animation-in-offset="0" data-yeah-animation-out-offset="0">
+            </div>
+            <div class="col-lg-6 mt">
+            <img class="animated" data-yeah-animation-in="slideInLeft" data-yeah-animation-out=""
+                 data-yeah-animation-in-offset="0" data-yeah-animation-out-offset="0" src="http://placehold.it/650x250?text=offset-in 400 / offset-out 0">
+        </div>
+
+        </div>
+
+        <div class="row mt+">
+            <div>
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    It's possible to set offset...
+                </h3>
+            </div>
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+            <img class="animated" data-yeah-animation-in="rotateInDownLeft" data-yeah-animation-out="rotateOutUpLeft" data-yeah-animation-in-offset="0" data-yeah-animation-out-offset="200"
+                 src="http://placehold.it/650x250?text=rotateInDownLeft/rotateOutUpLeft">
+        </div>
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+            <img class="animated" data-yeah-animation-in="rotateInDownRight" data-yeah-animation-out="rotateOutUpRight" data-yeah-animation-in-offset="210" data-yeah-animation-out-offset="0"
+                 src="http://placehold.it/650x250?text=rotateInDownRight/rotateOutUpRight">
+        </div>
+
+
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                <img class="animated" data-yeah-animation-in="rotateInDownLeft" data-yeah-animation-out="rotateOutUpLeft" data-yeah-animation-in-offset="0" data-yeah-animation-out-offset="200"
+                     src="http://placehold.it/650x250?text=rotateInDownLeft/rotateOutUpLeft">
+            </div>
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+            <img class="animated" data-yeah-animation-in="rotateInDownRight" data-yeah-animation-out="rotateOutUpRight" data-yeah-animation-in-offset="210" data-yeah-animation-out-offset="0"
+                 src="http://placehold.it/650x250?text=rotateInDownRight/rotateOutUpRight">
+        </div>
+
+
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                <img class="animated" data-yeah-animation-in="rotateInDownLeft" data-yeah-animation-out="rotateOutUpLeft" data-yeah-animation-in-offset="0" data-yeah-animation-out-offset="200"
+                     src="http://placehold.it/650x250?text=rotateInDownLeft/rotateOutUpLeft">
+            </div>
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+            <img class="animated" data-yeah-animation-in="rotateInDownRight" data-yeah-animation-out="rotateOutUpRight" data-yeah-animation-in-offset="210" data-yeah-animation-out-offset="0"
+                 src="http://placehold.it/650x250?text=rotateInDownRight/rotateOutUpRight">
+        </div>
+
+
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                <img class="animated" data-yeah-animation-in="rotateInDownLeft" data-yeah-animation-out="rotateOutUpLeft" data-yeah-animation-in-offset="0" data-yeah-animation-out-offset="200"
+                     src="http://placehold.it/650x250?text=rotateInDownLeft/rotateOutUpLeft">
+            </div>
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+            <img class="animated" data-yeah-animation-in="rotateInDownRight" data-yeah-animation-out="rotateOutUpRight" data-yeah-animation-in-offset="210" data-yeah-animation-out-offset="0"
+                 src="http://placehold.it/650x250?text=rotateInDownRight/rotateOutUpRight">
+        </div>
+
+
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                <img class="animated" data-yeah-animation-in="rotateInDownLeft" data-yeah-animation-out="rotateOutUpLeft" data-yeah-animation-in-offset="0" data-yeah-animation-out-offset="200"
+                     src="http://placehold.it/650x250?text=rotateInDownLeft/rotateOutUpLeft">
+            </div>
+            <div class="col-lg-6 mt animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+            <img class="animated" data-yeah-animation-in="rotateInDownRight" data-yeah-animation-out="rotateOutUpRight" data-yeah-animation-in-offset="210" data-yeah-animation-out-offset="0"
+                 src="http://placehold.it/650x250?text=rotateInDownRight/rotateOutUpRight">
+        </div>
+
+
+        </div>
+
+
+        <div class="row mt+">
+            <div>
+                <h1>How to install:</h1>
+
+            </div>
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-12">
+
+
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Use bower
+                </h3>
+                <pre class="brush: js;">
+bower install yeahjs
+                </pre>
+                <h1>...otherwise</h1>
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Downlaod from <a target="_blank" href="https://github.com/kenta88/YEAH">github</a>
+                </h3>
+
+            </div>
+        </div>
+
+
+        <div class="row mt+">
+            <div>
+                <h1>How to use:</h1>
+
+            </div>
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-12">
+
+
+            <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                Yeah is a jquery plugin! So it need jquery to works.<br>
+                It's IMPORTANT! If you use bootstrap or any css framework that use float elements bind the load of plugin on window load event.
+            </h3>
+                <pre class="brush: js;">
+<!--
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="YEAH.min.js"></script>
+-->
+
+$(window).load(function(){
+    $(".animated").yeah();
+});
+                </pre>
+        </div>
+        </div>
+
+
+        <div class="row mt+">
+
+            <div class="col-lg-12">
+
+
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Yeah is completely responsive! You can set availables width and mobile check!
+                </h3>
+                <pre class="brush: js;">
+
+$(window).load(function(){
+    $(".animated").yeah({
+        responsiveAvailableWidth:[{min:768,max:1024},{min:1440,max:9999}],
+        mobile:true
+        });
+});
+                </pre>
+            </div>
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-12">
+
+
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Yeah is currently a beta version. Soon we will add others features likes public methods and events.
+                </h3>
+
+            </div>
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-12">
+
+
+                <h1 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Credits
+                </h1>
+
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    Developed by <a href="http://www.alessiodicrescenzo.com" target="_blank">Alessio "Kenta" di Crescenzo</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://github.com/kenta88" target="_blank"><i class="fa fa-github-alt"></i></a> <br><br>
+                    Thanks to Wow.js (<a href="http://mynameismatthieu.com/" target="_blank"> Matt Aussaguel </a>)<br><br>
+                    Thanks to Animate.css (<a href="https://daneden.me/" target="_blank"> Daniel Eden </a>)
+                </h3>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+<script>
+
+    $(window).load(function() {
+        $(".animated").yeah({
+            responsiveAvailableWidth:undefined,
+            mobile:undefined
+        });
+    });
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
