@@ -15,10 +15,19 @@ window._yeahused="1.0.0";
 
     $.fn.yeah = function( params ) {
 
+        if(params)
+        {
+            params.responsiveAvailableWidth = (params.responsiveAvailableWidth) ? params.responsiveAvailableWidth : null;
+            params.mobile = (params.mobile !== undefined) ? params.mobile : true;
+        }
+        else
+        {
+            params={
+                responsiveAvailableWidth:null,
+                mobile:true
+            };
 
-        params.responsiveAvailableWidth = (params.responsiveAvailableWidth) ? params.responsiveAvailableWidth : null;
-        params.mobile = (params.mobile !== undefined) ? params.mobile : true;
-
+        }
 
 
         var that=this;
@@ -35,7 +44,10 @@ window._yeahused="1.0.0";
                     'top':parseInt(offset),
                     'bottom':parseInt(offset - window.innerHeight + $(el).innerHeight()),
                     'inOffset':inOffset ? parseInt(inOffset) : 0,
-                    'outOffset':outOffset ? parseInt(outOffset) : 0
+                    'outOffset':outOffset ? parseInt(outOffset) : 0,
+                    'animIteration':($(el).data("yeah-animation-repeat")) ? $(el).data("yeah-animation-repeat") : "always",
+                    'animIterationFlagIn':true,
+                    'animIterationFlagOut':true
                 };
 
                 _arr.push(obj);
@@ -68,8 +80,8 @@ window._yeahused="1.0.0";
         {
             if(!that.checkAvailableWidth())
             {
-                $(this.animatedElements).each(function (i, el) {
-
+                $(this.animatedElements).each(function (i, el)
+                {
                     $(el.element).removeClass($(el.element).data("yeah-animation-in"));
                     $(el.element).removeClass($(el.element).data("yeah-animation-out"));
                 });
@@ -92,11 +104,35 @@ window._yeahused="1.0.0";
 
                 if(el.bottom <=_scrollPosition - el.inOffset  && _scrollPosition + el.outOffset <= el.top)
                 {
-                    _arrInto.push(el.element);
+                    if(el.animIteration==="once")
+                    {
+                        if(el.animIterationFlagIn)
+                        {
+                            _arrInto.push(el.element);
+                            el.animIterationFlagIn=false;
+                        }
+                    }
+                    else
+                    {
+                        _arrInto.push(el.element);
+                    }
+
                 }
                 else
                 {
-                    _arrOut.push(el.element);
+                    if(el.animIteration==="once")
+                    {
+                        if(el.animIterationFlagOut)
+                        {
+                            _arrOut.push(el.element);
+                            el.animIterationFlagOut=false;
+                        }
+                    }
+                    else
+                    {
+                        _arrOut.push(el.element);
+                    }
+
                 }
             });
 

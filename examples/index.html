@@ -282,6 +282,30 @@
 
         </div>
 
+        <div class="row mt+">
+            <div>
+                <h3 class="animated" data-yeah-animation-in="fadeIn" data-yeah-animation-out="fadeOut">
+                    It's possible to set animation iteration...
+                </h3>
+            </div>
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-12 mt">
+                <img class="animated" data-yeah-animation-in="lightSpeedIn" data-yeah-animation-out="lightSpeedOut" data-yeah-animation-repeat="once" src="http://placehold.it/650x250?text=flipInX/flipOutX">
+            </div>
+
+        </div>
+
+        <div class="row mt+">
+
+            <div class="col-lg-12 mt">
+                <img class="animated" data-yeah-animation-in="lightSpeedOut" data-yeah-animation-out="lightSpeedIn" data-yeah-animation-repeat="once" src="http://placehold.it/650x250?text=flipInX/flipOutX">
+            </div>
+
+        </div>
+
 
         <div class="row mt+">
             <div>
@@ -396,11 +420,11 @@ $(window).load(function(){
 
 <script>
 
+
+
     $(window).load(function() {
-        $(".animated").yeah({
-            responsiveAvailableWidth:undefined,
-            mobile:undefined
-        });
+        console.log("page loaded");
+        $(".animated").yeah();
     });
 
 
