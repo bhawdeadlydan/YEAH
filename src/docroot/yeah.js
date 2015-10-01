@@ -142,7 +142,6 @@ window._yeahused="1.0.0";
 
         this.checkAvailableWidth=function()
         {
-
             if(params.responsiveAvailableWidth)
             {
                 var i=0, l=params.responsiveAvailableWidth.length, flag=false;
