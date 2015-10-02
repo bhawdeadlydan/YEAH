@@ -98,6 +98,36 @@
             width: 100%;
         }
 
+        .testAnimation
+        {
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+
+            -webkit-transform: rotateY(180deg);  -webkit-transform-style: preserve-3d;
+            -ms-transform: rotateY(180deg);      -ms-transform-style: preserve-3d;
+            transform: rotateY(180deg);          transform-style: preserve-3d;
+
+            opacity:0;
+        }
+
+        .testAnimation.is-open
+        {
+            -webkit-transform: rotateY(0deg);  -webkit-transform-style: preserve-3d;
+            -ms-transform: rotateY(0deg);      -ms-transform-style: preserve-3d;
+            transform: rotateY(0deg);          transform-style: preserve-3d;
+
+            opacity:1;
+        }
+
+        .testAnimation.is-open:hover
+        {
+            -webkit-transform: rotateX(180deg);  -webkit-transform-style: preserve-3d;
+            -ms-transform: rotateX(180deg);      -ms-transform-style: preserve-3d;
+            transform: rotateX(180deg);          transform-style: preserve-3d;
+        }
+
     </style>
 
 </head>
@@ -293,18 +323,12 @@
         <div class="row mt+">
 
             <div class="col-lg-12 mt">
-                <img class="animated" data-yeah-animation-in="lightSpeedIn" data-yeah-animation-out="lightSpeedOut" data-yeah-animation-repeat="once" src="http://placehold.it/650x250?text=flipInX/flipOutX">
+                <img class="animated testAnimation" data-yeah-animation-in="is-open" data-yeah-animation-repeat="once" src="http://placehold.it/650x250?text=testAnimation">
             </div>
 
         </div>
 
-        <div class="row mt+">
 
-            <div class="col-lg-12 mt">
-                <img class="animated" data-yeah-animation-in="lightSpeedOut" data-yeah-animation-out="lightSpeedIn" data-yeah-animation-repeat="once" src="http://placehold.it/650x250?text=flipInX/flipOutX">
-            </div>
-
-        </div>
 
 
         <div class="row mt+">
@@ -415,6 +439,9 @@ $(window).load(function(){
         </div>
 
     </div>
+
+
+    <a href="https://github.com/you"><img style="width:120px;position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
 
 

@@ -106,7 +106,7 @@ window._yeahused="1.0.0";
                 {
                     if(el.animIteration==="once")
                     {
-                        if(el.animIterationFlagIn)
+                        if(el.animIterationFlagIn && $(el.element).data("yeah-animation-in")!==undefined)
                         {
                             _arrInto.push(el.element);
                             el.animIterationFlagIn=false;
@@ -122,7 +122,7 @@ window._yeahused="1.0.0";
                 {
                     if(el.animIteration==="once")
                     {
-                        if(el.animIterationFlagOut)
+                        if(el.animIterationFlagOut && $(el.element).data("yeah-animation-out")!==undefined)
                         {
                             _arrOut.push(el.element);
                             el.animIterationFlagOut=false;
